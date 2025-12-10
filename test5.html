@@ -196,14 +196,15 @@
 </head>
 <body class="h-full flex flex-col">
 
-    <!-- CHANGED: Increased padding to py-4 for more space -->
-    <header class="sticky top-0 z-40 py-4 glass-panel">
+    <!-- CHANGED: Increased padding to py-6 to give the title more vertical space -->
+    <header class="sticky top-0 z-40 py-6 glass-panel">
         <div class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between relative">
             <!-- Invisible spacer to balance the layout -->
             <div class="w-24"></div>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-center tracking-tight absolute left-1/2 transform -translate-x-1/2 w-full pointer-events-none">
-                <svg class="w-full max-w-lg mx-auto" viewbox="0 0 100 20">
+                <!-- CHANGED: Increased viewbox height to 24 and moved text to y=19 to fix top cutoff -->
+                <svg class="w-full max-w-lg mx-auto" viewbox="0 0 100 24">
                   <defs>
                     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
                       <stop offset="5%" style="stop-color: var(--accent-color);"/> 
@@ -222,12 +223,11 @@
                       </path>
                     </pattern>
                   </defs>
-                  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="0.6">Oasis.</text>
-                  <text text-anchor="middle" x="50" y="15" font-size="17" class="fill-t-text" fill-opacity="0.1">Oasis.</text> 
+                  <text text-anchor="middle" x="50" y="19" font-size="17" fill="url(#wave)"  fill-opacity="0.6">Oasis.</text>
+                  <text text-anchor="middle" x="50" y="19" font-size="17" class="fill-t-text" fill-opacity="0.1">Oasis.</text> 
                 </svg>
             </h1>
 
-            <!-- CHANGED: Updated Settings Button with text and better icon -->
             <button id="settings-btn" class="flex items-center gap-2 px-4 py-2 rounded-full text-t-text hover:bg-t-border transition-colors z-50 border border-transparent hover:border-t-border" title="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
@@ -251,7 +251,6 @@
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white shadow-lg">Featured App</h2>
                     <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full border border-white/30">
-                            <!-- CHANGED: "Open Now" to "Play Now" -->
                             Play Now
                             <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5l6 6-6 6M4.5 12h15" />
@@ -294,7 +293,6 @@
             </div>
         </nav>
 
-        <!-- CHANGED: Reverted ID and Text to "Recently Played" -->
         <section id="recently-played-section" class="w-full my-6 hidden">
             <h2 class="text-2xl font-bold mb-4 text-t-text">Recently Played</h2>
             <div id="recently-played-grid" class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
@@ -392,7 +390,6 @@
         let allApps = [];
         let favorites = [];
         const FAVORITES_KEY = 'oasisGameFavorites';
-        // CHANGED: Reverted to RECENTLY_PLAYED variables
         let recentlyPlayed = [];
         const RECENTLY_PLAYED_KEY = 'oasisGameRecentlyPlayed';
         const MAX_RECENTLY_PLAYED = 10; 
@@ -565,7 +562,6 @@
             }
         }
 
-        // CHANGED: Reverted naming to "Played"
         function renderRecentlyPlayed() {
             if (!recentlyPlayedGrid || !recentlyPlayedSection) return;
             const recentApps = recentlyPlayed.map(id => allApps.find(app => app.id === id)).filter(app => app); 
@@ -594,18 +590,15 @@
             recentlyPlayedGrid.appendChild(fragment);
         }
 
-        // CHANGED: Reverted naming to "Played"
         function loadRecentlyPlayed() {
             const recents = localStorage.getItem(RECENTLY_PLAYED_KEY);
             recentlyPlayed = recents ? JSON.parse(recents) : [];
         }
 
-        // CHANGED: Reverted naming to "Played"
         function saveRecentlyPlayed() {
             localStorage.setItem(RECENTLY_PLAYED_KEY, JSON.stringify(recentlyPlayed));
         }
 
-        // CHANGED: Reverted naming to "Played"
         function addRecentlyPlayed(appId) {
             const existingIndex = recentlyPlayed.indexOf(appId);
             if (existingIndex > -1) recentlyPlayed.splice(existingIndex, 1);
@@ -767,19 +760,19 @@
                 } else {
                     const app = allApps.find(g => g.id === appId);
                     if (app && app.content) {
-                        addRecentlyPlayed(app.id); // CHANGED: Updated function call
+                        addRecentlyPlayed(app.id); 
                         launchApp(app.content); 
                     }
                 }
             });
-            if (recentlyPlayedGrid) { // CHANGED: Updated variable name
+            if (recentlyPlayedGrid) {
                 recentlyPlayedGrid.addEventListener('click', (e) => {
                     const card = e.target.closest('.recent-app-card');
                     if (!card) return;
                     const appId = card.dataset.id;
                     const app = allApps.find(g => g.id === appId);
                     if (app && app.content) {
-                        addRecentlyPlayed(app.id); // CHANGED: Updated function call
+                        addRecentlyPlayed(app.id); 
                         launchApp(app.content); 
                     }
                 });
@@ -843,8 +836,8 @@
         function initialize() {
             appCounter = document.getElementById('app-counter');
             jumpToTopBtn = document.getElementById('jump-to-top');
-            recentlyPlayedGrid = document.getElementById('recently-played-grid'); // CHANGED: Updated ID
-            recentlyPlayedSection = document.getElementById('recently-played-section'); // CHANGED: Updated ID
+            recentlyPlayedGrid = document.getElementById('recently-played-grid');
+            recentlyPlayedSection = document.getElementById('recently-played-section');
             favoritesBtn = document.getElementById('favorites-btn'); 
             
             // Initialize Settings
@@ -869,7 +862,7 @@
                 featuredAppLink.addEventListener('click', (e) => {
                     if (e.button === 0 && !e.ctrlKey && !e.metaKey) { 
                         e.preventDefault(); 
-                        addRecentlyPlayed(featuredApp.id); // CHANGED: Updated function call
+                        addRecentlyPlayed(featuredApp.id); 
                         launchApp(featuredApp.content); 
                     }
                 });
@@ -879,8 +872,8 @@
             }
 
             loadFavorites();
-            loadRecentlyPlayed(); // CHANGED: Updated function call
-            renderRecentlyPlayed(); // CHANGED: Updated function call
+            loadRecentlyPlayed();
+            renderRecentlyPlayed(); 
             populateCategories();
             setupEventListeners();
             updateFilterAndRender(); 
