@@ -92,6 +92,18 @@
             --favorite-color: #38bdf8;
         }
 
+        /* Crimson Theme (Red) - NEW */
+        html[data-theme="crimson"] {
+            --bg-color: #1a0505;
+            --surface-color: rgba(45, 10, 10, 0.8);
+            --text-color: #fecaca; /* red-200 */
+            --text-mutated: #f87171; /* red-400 */
+            --border-color: #7f1d1d;
+            --accent-color: #dc2626; /* red-600 */
+            --accent-hover: #b91c1c; /* red-700 */
+            --favorite-color: #ef4444;
+        }
+
         /* --- GLOBAL STYLES --- */
         body {
             font-family: 'Inter', sans-serif;
@@ -196,14 +208,12 @@
 </head>
 <body class="h-full flex flex-col">
 
-    <!-- CHANGED: Increased padding to py-6 to give the title more vertical space -->
     <header class="sticky top-0 z-40 py-6 glass-panel">
         <div class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between relative">
             <!-- Invisible spacer to balance the layout -->
             <div class="w-24"></div>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-center tracking-tight absolute left-1/2 transform -translate-x-1/2 w-full pointer-events-none">
-                <!-- CHANGED: Increased viewbox height to 24 and moved text to y=19 to fix top cutoff -->
                 <svg class="w-full max-w-lg mx-auto" viewbox="0 0 100 24">
                   <defs>
                     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
@@ -348,6 +358,10 @@
                         <div class="flex flex-col items-center gap-2 mt-2">
                             <div class="theme-preview bg-black border-green-500" data-theme="retro" style="border-color: #22c55e;"></div>
                             <span class="text-xs">Retro</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 mt-2">
+                            <div class="theme-preview bg-black border-red-600" data-theme="crimson" style="border-color: #dc2626;"></div>
+                            <span class="text-xs">Crimson</span>
                         </div>
                     </div>
                 </div>
@@ -880,7 +894,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const appsListUrl = 'https://cdn.jsdelivr.net/gh/Blurtuz/assets2@refs/heads/main/games30.json';
+            const appsListUrl = 'https://cdn.jsdelivr.net/gh/Blurtuz/assets2@refs/heads/main/games31.json';
             fetch(appsListUrl)
                 .then(response => {
                     if (!response.ok) throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
