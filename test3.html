@@ -202,13 +202,35 @@
             <div class="w-10"></div>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-center tracking-tight absolute left-1/2 transform -translate-x-1/2 w-full pointer-events-none">
-                <span class="text-t-text">Oasis Games</span>
+                <svg class="w-full max-w-lg mx-auto" viewbox="0 0 100 20">
+                  <defs>
+                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="5%" style="stop-color: var(--accent-color);"/> 
+                      <stop offset="95%" style="stop-color: var(--accent-color);"/>
+                    </linearGradient>
+                    <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+                        <animateTransform
+                            attributeName="transform"
+                            begin="0s"
+                            dur="1.5s"
+                            type="translate"
+                            from="0,0"
+                            to="40,0"
+                            repeatCount="indefinite" />
+                      </path>
+                    </pattern>
+                  </defs>
+                  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="0.6">Oasis.</text>
+                  <text text-anchor="middle" x="50" y="15" font-size="17" class="fill-t-text" fill-opacity="0.1">Oasis.</text> 
+                </svg>
             </h1>
 
             <!-- Settings Button -->
             <button id="settings-btn" class="p-2 rounded-full text-t-text hover:bg-t-border transition-colors z-50" title="Settings">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.1-.38 1.45l-3.031 2.86a24.16 24.16 0 01-2.37-2.37l2.86-3.03c.35-.437.9-.626 1.45-.38.891.4 1.821.732 2.783.985m7.18 2.19a24.16 24.16 0 01-2.09-.09m0-9.18c.688.06 1.386.09 2.09.09h.75a4.5 4.5 0 110 9h-.75c-.704 0-1.402.03-2.09.09m0-9.18c-.253-.962-.584-1.892-.985-2.783-.247-.55-.06-1.1.38-1.45l3.031-2.86a24.16 24.16 0 012.37 2.37l-2.86 3.03c-.35.437-.9.626-1.45.38-.891-.4-1.821-.732-2.783-.985m-7.18-2.19a24.16 24.16 0 012.09.09m0 9.18c-.688-.06-1.386-.09-2.09-.09h-.75a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09" />
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 5.343c-.2.2-.554.232-.78.07a9.609 9.609 0 00-1.62-.857c-.238-.096-.361-.36-.277-.609l.857-2.681a1.881 1.881 0 00-1.85-2.434H3.881c-.917 0-1.699.663-1.85 1.567L1.85 2.915c-.2.2-.554.232-.78.07a9.609 9.609 0 00-1.62-.857c-.238-.096-.361-.36-.277-.609l.857-2.681A1.881 1.881 0 00-1.85-3.666h1.539zM12 15a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M11.828 2.25c.916 0 1.699.663 1.85 1.567l.182 1.527c.084.248.361.36.584.277a9.609 9.609 0 011.62.857c.226.162.58.13.78-.07l1.96-2.12a1.881 1.881 0 012.739 0l1.539 1.539a1.881 1.881 0 010 2.739l-2.12 1.96c-.2.2-.232.554-.07.78a9.609 9.609 0 01-.857 1.62c-.096.238-.36.361-.609.277l-1.527-.182a1.881 1.881 0 00-1.567 1.85v2.178c0 .917-.663 1.699-1.567 1.85l-1.527.182c-.248.084-.361.36-.277.584a9.609 9.609 0 00-.857 1.62c-.162.226-.13.58.07.78l2.12 1.96a1.881 1.881 0 000 2.739l-1.539 1.539a1.881 1.881 0 00-2.739 0l-1.96-2.12c-.2-.2-.554-.232-.78-.07a9.609 9.609 0 00-1.62.857c-.238.096-.361.36-.277.609l.182 1.527c.151.904.933 1.567 1.85 1.567h2.178c.917 0 1.699-.663 1.85-1.567l.182-1.527c.084-.248.361-.36.584-.277a9.609 9.609 0 001.62-.857c.226-.162.58-.13.78.07l1.96 2.12a1.881 1.881 0 002.739 0l1.539-1.539a1.881 1.881 0 000-2.739l-2.12-1.96c-.2-.2-.232-.554-.07-.78a9.609 9.609 0 00-.857-1.62c-.096-.238-.36-.361-.609-.277l-1.527.182a1.881 1.881 0 01-1.567-1.85V11.828zM12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9z" clip-rule="evenodd" />
                 </svg>
             </button>
         </div>
