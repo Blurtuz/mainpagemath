@@ -196,10 +196,11 @@
 </head>
 <body class="h-full flex flex-col">
 
-    <header class="sticky top-0 z-40 py-2 glass-panel">
+    <!-- CHANGED: Increased padding to py-4 for more space -->
+    <header class="sticky top-0 z-40 py-4 glass-panel">
         <div class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between relative">
             <!-- Invisible spacer to balance the layout -->
-            <div class="w-10"></div>
+            <div class="w-24"></div>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-center tracking-tight absolute left-1/2 transform -translate-x-1/2 w-full pointer-events-none">
                 <svg class="w-full max-w-lg mx-auto" viewbox="0 0 100 20">
@@ -226,12 +227,13 @@
                 </svg>
             </h1>
 
-            <!-- Settings Button -->
-            <button id="settings-btn" class="p-2 rounded-full text-t-text hover:bg-t-border transition-colors z-50" title="Settings">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 5.343c-.2.2-.554.232-.78.07a9.609 9.609 0 00-1.62-.857c-.238-.096-.361-.36-.277-.609l.857-2.681a1.881 1.881 0 00-1.85-2.434H3.881c-.917 0-1.699.663-1.85 1.567L1.85 2.915c-.2.2-.554.232-.78.07a9.609 9.609 0 00-1.62-.857c-.238-.096-.361-.36-.277-.609l.857-2.681A1.881 1.881 0 00-1.85-3.666h1.539zM12 15a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                    <path fill-rule="evenodd" d="M11.828 2.25c.916 0 1.699.663 1.85 1.567l.182 1.527c.084.248.361.36.584.277a9.609 9.609 0 011.62.857c.226.162.58.13.78-.07l1.96-2.12a1.881 1.881 0 012.739 0l1.539 1.539a1.881 1.881 0 010 2.739l-2.12 1.96c-.2.2-.232.554-.07.78a9.609 9.609 0 01-.857 1.62c-.096.238-.36.361-.609.277l-1.527-.182a1.881 1.881 0 00-1.567 1.85v2.178c0 .917-.663 1.699-1.567 1.85l-1.527.182c-.248.084-.361.36-.277.584a9.609 9.609 0 00-.857 1.62c-.162.226-.13.58.07.78l2.12 1.96a1.881 1.881 0 000 2.739l-1.539 1.539a1.881 1.881 0 00-2.739 0l-1.96-2.12c-.2-.2-.554-.232-.78-.07a9.609 9.609 0 00-1.62.857c-.238.096-.361.36-.277.609l.182 1.527c.151.904.933 1.567 1.85 1.567h2.178c.917 0 1.699-.663 1.85-1.567l.182-1.527c.084-.248.361-.36.584-.277a9.609 9.609 0 001.62-.857c.226-.162.58-.13.78.07l1.96 2.12a1.881 1.881 0 002.739 0l1.539-1.539a1.881 1.881 0 000-2.739l-2.12-1.96c-.2-.2-.232-.554-.07-.78a9.609 9.609 0 00-.857-1.62c-.096-.238-.36-.361-.609-.277l-1.527.182a1.881 1.881 0 01-1.567-1.85V11.828zM12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9z" clip-rule="evenodd" />
+            <!-- CHANGED: Updated Settings Button with text and better icon -->
+            <button id="settings-btn" class="flex items-center gap-2 px-4 py-2 rounded-full text-t-text hover:bg-t-border transition-colors z-50 border border-transparent hover:border-t-border" title="Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
+                <span class="font-medium hidden sm:block">Themes</span>
             </button>
         </div>
     </header>
@@ -249,7 +251,8 @@
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white shadow-lg">Featured App</h2>
                     <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full border border-white/30">
-                            Open Now
+                            <!-- CHANGED: "Open Now" to "Play Now" -->
+                            Play Now
                             <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5l6 6-6 6M4.5 12h15" />
                             </svg>
@@ -291,9 +294,10 @@
             </div>
         </nav>
 
-        <section id="recently-used-section" class="w-full my-6 hidden">
-            <h2 class="text-2xl font-bold mb-4 text-t-text">Recently Used</h2>
-            <div id="recently-used-grid" class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+        <!-- CHANGED: Reverted ID and Text to "Recently Played" -->
+        <section id="recently-played-section" class="w-full my-6 hidden">
+            <h2 class="text-2xl font-bold mb-4 text-t-text">Recently Played</h2>
+            <div id="recently-played-grid" class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
             </div>
         </section>
 
@@ -388,9 +392,10 @@
         let allApps = [];
         let favorites = [];
         const FAVORITES_KEY = 'oasisGameFavorites';
-        let recentlyUsed = [];
-        const RECENTLY_USED_KEY = 'oasisGameRecentlyPlayed';
-        const MAX_RECENTLY_USED = 10; 
+        // CHANGED: Reverted to RECENTLY_PLAYED variables
+        let recentlyPlayed = [];
+        const RECENTLY_PLAYED_KEY = 'oasisGameRecentlyPlayed';
+        const MAX_RECENTLY_PLAYED = 10; 
 
         // Settings State
         let currentTheme = localStorage.getItem('oasisTheme') || 'dark';
@@ -418,8 +423,8 @@
         
         let appCounter;
         let jumpToTopBtn;
-        let recentlyUsedGrid;
-        let recentlyUsedSection;
+        let recentlyPlayedGrid;
+        let recentlyPlayedSection;
         let favoritesBtn; 
 
         // Modal Elements
@@ -560,15 +565,16 @@
             }
         }
 
-        function renderRecentlyUsed() {
-            if (!recentlyUsedGrid || !recentlyUsedSection) return;
-            const recentApps = recentlyUsed.map(id => allApps.find(app => app.id === id)).filter(app => app); 
+        // CHANGED: Reverted naming to "Played"
+        function renderRecentlyPlayed() {
+            if (!recentlyPlayedGrid || !recentlyPlayedSection) return;
+            const recentApps = recentlyPlayed.map(id => allApps.find(app => app.id === id)).filter(app => app); 
             if (recentApps.length === 0) {
-                recentlyUsedSection.classList.add('hidden');
+                recentlyPlayedSection.classList.add('hidden');
                 return;
             }
-            recentlyUsedSection.classList.remove('hidden');
-            recentlyUsedGrid.innerHTML = ''; 
+            recentlyPlayedSection.classList.remove('hidden');
+            recentlyPlayedGrid.innerHTML = ''; 
             const fragment = document.createDocumentFragment();
             recentApps.forEach(app => {
                 const card = document.createElement('div');
@@ -577,6 +583,7 @@
                 card.innerHTML = `
                     <div class="relative w-full aspect-[4/3] bg-gray-200 dark:bg-gray-700">
                         <img src="${app.thumbnail}" alt="${app.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://placehold.co/400x300/2a3b4c/ffffff?text=${encodeURIComponent(app.name)}'; this.onerror=null;">
+                        <span class="absolute top-1 right-1 category-badge">${app.category}</span>
                     </div>
                     <div class="p-2">
                         <h3 class="font-semibold text-sm text-t-text truncate">${app.name}</h3>
@@ -584,25 +591,28 @@
                 `;
                 fragment.appendChild(card);
             });
-            recentlyUsedGrid.appendChild(fragment);
+            recentlyPlayedGrid.appendChild(fragment);
         }
 
-        function loadRecentlyUsed() {
-            const recents = localStorage.getItem(RECENTLY_USED_KEY);
-            recentlyUsed = recents ? JSON.parse(recents) : [];
+        // CHANGED: Reverted naming to "Played"
+        function loadRecentlyPlayed() {
+            const recents = localStorage.getItem(RECENTLY_PLAYED_KEY);
+            recentlyPlayed = recents ? JSON.parse(recents) : [];
         }
 
-        function saveRecentlyUsed() {
-            localStorage.setItem(RECENTLY_USED_KEY, JSON.stringify(recentlyUsed));
+        // CHANGED: Reverted naming to "Played"
+        function saveRecentlyPlayed() {
+            localStorage.setItem(RECENTLY_PLAYED_KEY, JSON.stringify(recentlyPlayed));
         }
 
-        function addRecentlyUsed(appId) {
-            const existingIndex = recentlyUsed.indexOf(appId);
-            if (existingIndex > -1) recentlyUsed.splice(existingIndex, 1);
-            recentlyUsed.unshift(appId);
-            if (recentlyUsed.length > MAX_RECENTLY_USED) recentlyUsed = recentlyUsed.slice(0, MAX_RECENTLY_USED);
-            saveRecentlyUsed();
-            renderRecentlyUsed(); 
+        // CHANGED: Reverted naming to "Played"
+        function addRecentlyPlayed(appId) {
+            const existingIndex = recentlyPlayed.indexOf(appId);
+            if (existingIndex > -1) recentlyPlayed.splice(existingIndex, 1);
+            recentlyPlayed.unshift(appId);
+            if (recentlyPlayed.length > MAX_RECENTLY_PLAYED) recentlyPlayed = recentlyPlayed.slice(0, MAX_RECENTLY_PLAYED);
+            saveRecentlyPlayed();
+            renderRecentlyPlayed(); 
         }
 
         function populateCategories() {
@@ -611,7 +621,7 @@
             categoryFilter.innerHTML = `
                 <option value="all">All Categories</option>
                 <option value="favorites">Favorites</option>
-                <option value="recently">Recently Used</option>
+                <option value="recently">Recently Played</option>
                 ${categories.map(cat => `<option value="${cat}">${cat}</option>`).join('')}
             `;
         }
@@ -636,7 +646,7 @@
             currentFilteredApps = allApps.filter(app => {
                 const categoryMatch = category === 'all' ||
                                       (category === 'favorites' && favorites.includes(app.id)) ||
-                                      (category === 'recently' && recentlyUsed.includes(app.id)) ||
+                                      (category === 'recently' && recentlyPlayed.includes(app.id)) ||
                                       app.category === category;
                 const searchMatch = app.name.toLowerCase().includes(searchTerm);
                 return categoryMatch && searchMatch;
@@ -644,7 +654,7 @@
 
             if (category === 'recently') {
                 currentFilteredApps.sort((a, b) => {
-                    return recentlyUsed.indexOf(a.id) - recentlyUsed.indexOf(b.id);
+                    return recentlyPlayed.indexOf(a.id) - recentlyPlayed.indexOf(b.id);
                 });
             }
 
@@ -757,19 +767,19 @@
                 } else {
                     const app = allApps.find(g => g.id === appId);
                     if (app && app.content) {
-                        addRecentlyUsed(app.id);
+                        addRecentlyPlayed(app.id); // CHANGED: Updated function call
                         launchApp(app.content); 
                     }
                 }
             });
-            if (recentlyUsedGrid) {
-                recentlyUsedGrid.addEventListener('click', (e) => {
+            if (recentlyPlayedGrid) { // CHANGED: Updated variable name
+                recentlyPlayedGrid.addEventListener('click', (e) => {
                     const card = e.target.closest('.recent-app-card');
                     if (!card) return;
                     const appId = card.dataset.id;
                     const app = allApps.find(g => g.id === appId);
                     if (app && app.content) {
-                        addRecentlyUsed(app.id); 
+                        addRecentlyPlayed(app.id); // CHANGED: Updated function call
                         launchApp(app.content); 
                     }
                 });
@@ -833,8 +843,8 @@
         function initialize() {
             appCounter = document.getElementById('app-counter');
             jumpToTopBtn = document.getElementById('jump-to-top');
-            recentlyUsedGrid = document.getElementById('recently-used-grid');
-            recentlyUsedSection = document.getElementById('recently-used-section');
+            recentlyPlayedGrid = document.getElementById('recently-played-grid'); // CHANGED: Updated ID
+            recentlyPlayedSection = document.getElementById('recently-played-section'); // CHANGED: Updated ID
             favoritesBtn = document.getElementById('favorites-btn'); 
             
             // Initialize Settings
@@ -859,7 +869,7 @@
                 featuredAppLink.addEventListener('click', (e) => {
                     if (e.button === 0 && !e.ctrlKey && !e.metaKey) { 
                         e.preventDefault(); 
-                        addRecentlyUsed(featuredApp.id);
+                        addRecentlyPlayed(featuredApp.id); // CHANGED: Updated function call
                         launchApp(featuredApp.content); 
                     }
                 });
@@ -869,8 +879,8 @@
             }
 
             loadFavorites();
-            loadRecentlyUsed();
-            renderRecentlyUsed(); 
+            loadRecentlyPlayed(); // CHANGED: Updated function call
+            renderRecentlyPlayed(); // CHANGED: Updated function call
             populateCategories();
             setupEventListeners();
             updateFilterAndRender(); 
